@@ -29,4 +29,56 @@ class CamelCaseTest {
         assertTrue(resultadoEsperado.equals(resultado));
         assertEquals(2, resultado.size());
     }
+    @Test
+    void converterCamelCase_NomeComposto(){
+        resultadoEsperado.add("nome");
+        resultadoEsperado.add("composto");
+        List<String> resultado = CamelCase.converterCamelCase("NomeComposto");
+        System.out.println(resultado);
+        assertTrue(resultadoEsperado.equals(resultado));
+        assertEquals(2, resultado.size());
+    }
+    @Test
+    void converterCamelCase_CPF(){
+        resultadoEsperado.add("CPF");
+
+        List<String> resultado = CamelCase.converterCamelCase("CPF");
+        System.out.println(resultado);
+        assertTrue(resultadoEsperado.equals(resultado));
+        assertEquals(1, resultado.size());
+    }
+    @Test
+    void converterCamelCase_numeroCPF(){
+        resultadoEsperado.add("numero");
+        resultadoEsperado.add("CPF");
+        List<String> resultado = CamelCase.converterCamelCase("numeroCPF");
+        System.out.println(resultado);
+        assertTrue(resultadoEsperado.equals(resultado));
+        assertEquals(2, resultado.size());
+    }
+    @Test
+    void converterCamelCase_numeroCPFContribuinte(){
+        resultadoEsperado.add("numero");
+        resultadoEsperado.add("CPF");
+        resultadoEsperado.add("contribuinte");
+
+        List<String> resultado = CamelCase.converterCamelCase("numeroCPFContribuinte");
+        System.out.println(resultado);
+        assertTrue(resultadoEsperado.equals(resultado));
+        assertEquals(3, resultado.size());
+    }
+    @Test
+    void converterCamelCase_recupera10Primeiros(){
+        resultadoEsperado.add("recupera");
+        resultadoEsperado.add("10");
+        resultadoEsperado.add("primeiros");
+
+        List<String> resultado = CamelCase.converterCamelCase("recupera10Primeiros");
+        System.out.println(resultado);
+        assertTrue(resultadoEsperado.equals(resultado));
+        assertEquals(3, resultado.size());
+    }
+
+
+
 }
